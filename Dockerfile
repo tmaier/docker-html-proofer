@@ -10,5 +10,7 @@ RUN apk add --no-cache \
 
 RUN gem install html-proofer
 
-ENTRYPOINT ["htmlproofer"]
+COPY entrypoint.sh /
+
+ENTRYPOINT ["/entrypoint.sh"]
 CMD ["--help"]
